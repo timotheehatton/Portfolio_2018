@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="landing">
-        <h1 class="landing--title">Trilatte 3d</h1>
+        <h1 class="landing--title">BMW i8</h1>
     </section>
     <section class="project">
         <div class="container">
@@ -50,7 +50,7 @@
     </section>
     <a  class="nav">
         <div class="nav--item">
-            <h4 class="nav--item--title">BMW i8</h4>
+            <h4 class="nav--item--title">Doctobot</h4>
             <p class="nav--item--description">
                 Pour un projet de 3éme année en développement Wordpress, nous avons créé un site web pour présenter la nouvelle BMW i8. Le site dispose d'un configurateur avec une vue à 360 degrés. Tout le contenu du site est également administrable via le back-office.
             </p>
