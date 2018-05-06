@@ -1,0 +1,47 @@
+.landing {
+  background-image: url('../../../../static/img/doctobot-landing.jpg')
+}
+
+.mockup--img {
+  max-width: 400px;
+}
+
+.visuals {
+  display: block;
+  text-align: center;
+  &--img {
+    max-width: 400px;
+    &:nth-child(3) {
+      margin-right: 130px;
+    }
+  }
+}
+
+.feature {
+  display: block;
+  text-align: center;
+  margin-bottom: 230px;
+  .feature--content {
+    margin: 0 auto 200px auto;
+  }
+  .feature--img {
+    max-width: 320px;
+    &:nth-child(3) {
+      margin: 0 50px;
+    }
+  }
+}
+
+.nav {
+  &:hover {
+    .nav--item {
+      background-color: #0D0F31;
+      &--description {
+        color: #fff;
+      }
+      &--title {
+        color: #0D0F31;
+      }
+    }
+  }
+}

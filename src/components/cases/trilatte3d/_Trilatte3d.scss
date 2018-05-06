@@ -1,0 +1,18 @@
+.landing {
+  background-image: url('../../../../static/img/trilatte-landing.jpg')
+}
+
+.nav {
+  &:hover {
+    .nav--item {
+      background-color: #194DD9;
+
+      &--description {
+        color: #fff;
+      }
+      &--title {
+        color: #194DD9;
+      }
+    }
+  }
+}

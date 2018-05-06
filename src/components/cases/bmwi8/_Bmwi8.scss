@@ -1,0 +1,17 @@
+.landing {
+  background-image: url('../../../../static/img/bmw-landing.jpg')
+}
+
+.nav {
+  &:hover {
+    .nav--item {
+      background-color: #72e4a7;
+      &--description {
+        color: #fff;
+      }
+      &--title {
+        color: #72e4a7;
+      }
+    }
+  }
+}
