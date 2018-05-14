@@ -13,6 +13,9 @@
     max-width: 400px;
     &:nth-child(3) {
       margin-right: 130px;
+      @media screen and (max-width: 934px) {
+        margin-right: 0;
+      }
     }
   }
 }
@@ -28,20 +31,27 @@
     max-width: 320px;
     &:nth-child(3) {
       margin: 0 50px;
+      @media screen and (max-width: 1068px) {
+        margin: 20px 0;
+      }
     }
   }
 }
 
-.nav {
-  &:hover {
-    .nav--item {
-      background-color: #0D0F31;
-      &--description {
-        color: #fff;
-      }
-      &--title {
-        color: #0D0F31;
-      }
+.nav:hover {
+  .nav--description {
+    background-color: #0D0F31 !important;
+    &--content {
+      color: #fff;
     }
+  }
+  .nav--title {
+    color: #0D0F31;
+  }
+}
+
+.landing {
+  &--wrapper {
+    background-color: #72e4a7;
   }
 }

@@ -2,6 +2,7 @@
   <div>
     <section class="landing">
     <h1 class="landing--title">Doctobot</h1>
+    <div class="landing--wrapper"></div>
   </section>
   <section class="project">
     <div class="container">
@@ -36,7 +37,8 @@
     <img class="mockup--img" :src="'./static/img/doctobot-mockup.png'" alt="">
   </section>
   <section class="visuals">
-    <video muted loop class="visuals--img visuals--video" :src="'./static/videos/doctobot-video.mp4'"></video>
+    <video v-if="mobile === false" muted loop class="visuals--img visuals--video" :src="'./static/videos/doctobot-video.mp4'" :poster="'./static/img/doctobot-poster.jpg'"></video>
+    <img v-else class="visuals--img" :src="'./static/img/doctobot-poster.jpg'" alt="">
     <div class="clear"></div>
     <img class="visuals--img" :src="'./static/img/doctobot-visual1.jpg'" alt="">
     <img class="visuals--img" :src="'./static/img/doctobot-visual2.jpg'" alt="">
@@ -45,21 +47,21 @@
     <div class="feature--content">
       <div class="feature--content--title featureTitle">Objectif de vie</div>
       <p class="feature--content--txt featureContent">
-        Doctobot accompagne l'utilisateur dans le choix de ses objectifs de vie tout en le conseillant sur sa santé, mais aussi son environnement en temps réel. Doctobot repose sur le principe de : plus l'utilisateur lui en dira, mieux il pourra le conseiller.
+        Doctobot accompagne l'utilisateur dans le choix de ses objectifs de vie tout en le conseillant sur sa santé, mais aussi son environnement en temps réel. Doctobot repose sur le principe de&nbsp;:&nbsp;plus l'utilisateur lui en dira, mieux il pourra le conseiller.
       </p>
     </div>
     <img :src="'./static/img/doctobot-visual3.jpg'" alt="" class="feature--img">
     <img :src="'./static/img/doctobot-visual4.jpg'" alt="" class="feature--img">
     <img :src="'./static/img/doctobot-visual5.jpg'" alt="" class="feature--img">
   </section>
-  <router-link to="wise-stone" class="nav">
-    <div class="nav--item">
-      <h4 class="nav--item--title">Wise stone</h4>
-      <p class="nav--item--description">
+  <a href="#" class="nav">
+    <h4 class="nav--title">Wise stone</h4>
+    <div class="nav--description">
+      <p class="nav--description--content">
         Pour un projet freelance encadré par l'école, nous avons créé un site web pour le chasseur immobilier Wise Stone. Le site est développé sur le CMS Wordpress et dispose d'un formulaire dynamique permettant de renseigner son projet immobilier.
       </p>
     </div>
-  </router-link>
+  </a>
   </div>
 </template>
 

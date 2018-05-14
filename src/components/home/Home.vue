@@ -1,29 +1,34 @@
 <template>
   <div>
-    <router-link to="trilatte-3d" class="content--item">
+    <div class="wrapper">
+      <div class="wrapper--background"></div>
+      <span class="wrapper--title">trilatte 3d</span>
+    </div>
+    <a href="#" class="content--item">
       <div class="content--item--date">
-        <span>01/2018</span>
+        <span>04/2018</span>
       </div>
       <div class="content--item--img">
-        <video muted loop class="content--item--video" :src="'./static/videos/trilatte-video.mp4'"></video>
+        <video v-if="mobile === false" muted loop class="content--item--video" :src="'./static/videos/trilatte-video.mp4'" :poster="'./static/img/trilatte-poster.jpg'"></video>
+        <img v-else :src="'./static/img/trilatte-poster.jpg'" alt="">
       </div>
       <div class="content--item--content">
         <h2 class="content--item--content--title">Trilatte 3D</h2>
         <p class="content--item--content--description">
-          Réalisation d’une web application permettant de configurer
-          et tester différentes finitions intérieures.
+          Réalisation d’une web application permettant de configurer et tester différentes finitions intérieures.
         </p>
         <span class="content--item--content--link">
           <i class="arrow"></i>Voir le projet
         </span>
       </div>
-    </router-link>
-    <router-link to="bmw-i8" class="content--item">
+    </a>
+    <a href="#" class="content--item">
       <div class="content--item--date">
         <span>03/2018</span>
       </div>
       <div class="content--item--img">
-        <video muted loop class="content--item--video" :src="'./static/videos/bmw-video.mp4'"></video>
+        <video v-if="mobile === false" muted loop class="content--item--video" :src="'./static/videos/bmw-video.mp4'" :poster="'./static/img/bmw-poster.jpg'"></video>
+        <img v-else :src="'./static/img/bmw-poster.jpg'" alt="">
       </div>
       <div class="content--item--content">
         <h2 class="content--item--content--title">BMW i8</h2>
@@ -34,13 +39,14 @@
           <i class="arrow"></i>Voir le projet
         </span>
       </div>
-    </router-link>
-    <router-link to="Doctobot" class="content--item doctobot">
+    </a>
+    <a href="#" class="content--item doctobot">
       <div class="content--item--date">
         <span>02/2018</span>
       </div>
       <div class="content--item--img">
-        <video muted loop class="content--item--video" :src="'./static/videos/doctobot-video.mp4'"></video>
+        <video v-if="mobile === false" muted loop class="content--item--video" :src="'./static/videos/doctobot-video.mp4'" :poster="'./static/img/doctobot-poster.jpg'"></video>
+        <img v-else :src="'./static/img/doctobot-poster.jpg'" alt="">
       </div>
       <div class="content--item--content">
         <h2 class="content--item--content--title">Doctobot</h2>
@@ -51,13 +57,14 @@
           <i class="arrow"></i>Voir le projet
         </span>
       </div>
-    </router-link>
-    <router-link to="wise-stone" class="content--item last">
+    </a>
+    <a href="#" class="content--item last">
       <div class="content--item--date">
-        <span>04/2018</span>
+        <span>01/2018</span>
       </div>
       <div class="content--item--img">
-        <video muted loop class="content--item--video" :src="'./static/videos/wisestone-video.mp4'"></video>
+        <video v-if="mobile === false" muted loop class="content--item--video" :src="'./static/videos/wisestone-video.mp4'" :poster="'./static/img/wisestone-poster.jpg'"></video>
+        <img v-else :src="'./static/img/wisestone-poster.jpg'" alt="">
       </div>
       <div class="content--item--content">
         <h2 class="content--item--content--title">Wise Stone</h2>
@@ -68,7 +75,7 @@
           <i class="arrow"></i>Voir le projet
         </span>
       </div>
-    </router-link>
+    </a>
   </div>
 </template>
 

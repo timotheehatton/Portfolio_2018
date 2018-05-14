@@ -2,6 +2,7 @@
   <div>
     <section class="landing">
       <h1 class="landing--title">Wise stone</h1>
+      <div class="landing--wrapper"></div>
     </section>
     <section class="project">
       <div class="container">
@@ -36,7 +37,8 @@
       <img class="mockup--img" :src="'./static/img/wisestone-mockup.png'" alt="">
     </section>
     <section class="visuals">
-      <video muted loop class="visuals--img visuals--video" :src="'./static/videos/wisestone-video.mp4'" ></video>
+      <video v-if="mobile === false" muted loop class="visuals--img visuals--video" :src="'./static/videos/wisestone-video.mp4'" :poster="'./static/img/wisestone-poster.jpg'"></video>
+      <img v-else class="visuals--img" :src="'./static/img/wisestone-poster.jpg'" alt="">
       <img class="visuals--img" :src="'./static/img/wisestone-visual.jpg'" alt="">
     </section>
     <section class="feature">
@@ -46,16 +48,16 @@
           L'objetif de ce formulaire dynamique était de donner la possibilité au prospect de décrire son projet de manière simple et ludique grâce à des illustrations et animations. Le résultat du formulaire est disponible dans le back-office du site et est envoyé par mail aux collaborateurs de Wise Stone.
         </p>
       </div>
-      <img :src="'./static/img/wisestone-feature.png'" alt="" class="feature--img">
+      <img :src="'./static/img/wisestone-feature.png'" alt="" class="visuals--img">
     </section>
-    <router-link to="trilatte-3d" class="nav">
-      <div class="nav--item">
-        <h4 class="nav--item--title">Trilatte 3d</h4>
-        <p class="nav--item--description">
+    <a href="#" class="nav">
+      <h4 class="nav--title">Trilatte 3d</h4>
+      <div class="nav--description">
+        <p class="nav--description--content">
           Pour un projet en freelance, j'ai eu pour mission de réaliser une web application de configuration "nouvelle génération", permettant de personnaliser l'intérieur d'une pièce avec les panneaux de toiture Trilatte 3D. L'application devait être compatible VR.
         </p>
       </div>
-    </router-link>
+    </a>
   </div>
 </template>
 

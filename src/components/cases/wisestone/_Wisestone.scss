@@ -2,17 +2,20 @@
   background-image: url('../../../../static/img/wisestone-landing.jpg')
 }
 
-.nav {
-  &:hover {
-    .nav--item {
-      background-color: #CE854A;
-
-      &--description {
-        color: #fff;
-      }
-      &--title {
-        color: #CE854A;
-      }
+.nav:hover {
+  .nav--description {
+    background-color: #CE854A !important;
+    &--content {
+      color: #fff;
     }
+  }
+  .nav--title {
+    color: #CE854A;
+  }
+}
+
+.landing {
+  &--wrapper {
+    background-color: #0D0F31;
   }
 }

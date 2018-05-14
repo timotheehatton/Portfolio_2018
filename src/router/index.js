@@ -1,4 +1,5 @@
 import Vue from 'vue';
+
 import Router from 'vue-router';
 import Home from '@/components/home/Home';
 import Trilatte3d from '@/components/cases/trilatte3d/Trilatte3d';
@@ -9,6 +10,7 @@ import Bmw from '@/components/cases/bmwi8/Bmwi8';
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',

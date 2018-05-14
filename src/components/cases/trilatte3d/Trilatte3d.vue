@@ -2,6 +2,7 @@
   <div>
     <section class="landing">
     <h1 class="landing--title">Trilatte 3d</h1>
+    <div class="landing--wrapper"></div>
   </section>
   <section class="project">
     <div class="container">
@@ -26,7 +27,7 @@
         </div>
         <div class="project--specifications--item">
           <h3 class="project--specifications--item--title featureTitle">Url</h3>
-          <p class="project--specifications--item--content featureContent"><a target="_blank" href="https://trilatte3d.fr/configurateur-3d">trilatte3d.fr/configurateur-3d</a></p>
+          <p class="project--specifications--item--content featureContent"><a target="_blank" href="https://trilatte3d.fr/configurateur-3d">trilatte3d/configurateur3d</a></p>
         </div>
       </div>
     </div>
@@ -36,7 +37,8 @@
     <img class="mockup--img" :src="'./static/img/trilatte-mockup.png'" alt="">
   </section>
   <section class="visuals">
-    <video muted loop class="visuals--img visuals--video" :src="'./static/videos/trilatte-video.mp4'" ></video>
+    <video v-if="mobile === false" muted loop class="visuals--img visuals--video" :src="'./static/videos/trilatte-video.mp4'" :poster="'./static/img/trilatte-poster.jpg'"></video>
+    <img v-else class="visuals--img" :src="'./static/img/trilatte-poster.jpg'" alt="">
     <img class="visuals--img" :src="'./static/img/trilatte-visual.jpg'" alt="">
   </section>
   <section class="feature">
@@ -48,14 +50,14 @@
     </div>
     <img :src="'./static/img/trillate-vr.png'" alt="" class="feature--img">
   </section>
-  <router-link to="bmw-i8" class="nav">
-    <div class="nav--item">
-      <h4 class="nav--item--title">BMW i8</h4>
-      <p class="nav--item--description">
+  <a href="#" class="nav">
+    <h4 class="nav--title">BMW i8</h4>
+    <div class="nav--description">
+      <p class="nav--description--content">
         Pour un projet de 3éme année en développement Wordpress, nous avons créé un site web pour présenter la nouvelle BMW i8. Le site dispose d'un configurateur avec une vue à 360 degrés. Tout le contenu du site est également administrable via le back-office.
       </p>
     </div>
-  </router-link>
+  </a>
   </div>
 </template>
 

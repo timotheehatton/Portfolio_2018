@@ -1,50 +1,27 @@
 export default {
   name: 'headerNav',
   methods: {
+    changeContrastElement() {
+      this.rectBegin = document.querySelector('.project').getBoundingClientRect();
+      this.rectEnd = document.querySelector('.mockup').getBoundingClientRect();
+      this.header = document.querySelector('.header');
+      if (this.rectBegin.top <= 0 && this.rectEnd.bottom >= 0) {
+        this.header.classList.add('header-dark');
+      } else {
+        this.header.classList.remove('header-dark');
+      }
+    },
+
     endloadIng() {
       this.endload = true;
     },
     init() {
-      const aboutSection = document.querySelector('.about');
-      const aboutButton = document.querySelector('.header--works');
-      const aboutButtonTitle = aboutButton.querySelector('.header--works--content');
-      const overlay = document.querySelector('.overlay');
-
-      let aboutOpen = false;
-
-      const openAboutSection = () => {
-        aboutSection.style.transform = 'translateY(0)';
-        aboutSection.classList.add('opening');
-        aboutButtonTitle.style.right = '23px';
-        aboutButtonTitle.innerHTML = 'fermer';
-        overlay.style.display = 'block';
-        setTimeout(() => {
-          overlay.style.opacity = '1';
-        }, 1);
-        aboutOpen = true;
-      };
-
-      const closeAboutSection = () => {
-        aboutSection.style.transform = 'translateY(-100%)';
-        aboutSection.classList.remove('opening');
-        aboutButtonTitle.innerHTML = 'info';
-        aboutButtonTitle.style.right = '-2px';
-        overlay.style.opacity = '0';
-        setTimeout(() => {
-          overlay.style.display = 'none';
-        }, 300);
-        aboutOpen = false;
-      };
-
-      aboutButton.addEventListener('click', () => {
-        if (aboutOpen) {
-          closeAboutSection();
+      document.addEventListener('scroll', () => {
+        if (this.$route.path !== '/') {
+          this.changeContrastElement();
         } else {
-          openAboutSection();
+          document.querySelector('.header').classList.remove('header-dark');
         }
-      });
-      overlay.addEventListener('click', () => {
-        closeAboutSection();
       });
     },
   },

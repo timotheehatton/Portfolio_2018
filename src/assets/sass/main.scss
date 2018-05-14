@@ -1,9 +1,56 @@
 @import './reset.scss';
+@import './fonts.scss';
+
+html {
+  background-color: #121212;
+}
 
 body {
     overflow-x: hidden;
     background-color: #121212;
     font-family: "apercu";
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  z-index: 1000000;
+  transition: .8s height;
+  overflow: hidden;
+  &--background {
+    height: 100vh;
+  }
+  &--title {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 100000;
+    text-align: center;
+    font-weight: bold;
+    font-size: 144px;
+    color: #fff;
+    text-transform: uppercase;
+    @media screen and (max-width: 950px) {
+      font-size: 100px;
+    }
+    @media screen and (max-width: 750px) {
+      font-size: 80px;
+    }
+    @media screen and (max-width: 550px) {
+      font-size: 60px;
+    }
+    @media screen and (max-width: 400px) {
+      font-size: 40px;
+    }
+  }
 }
 
 //cases styles
@@ -33,22 +80,37 @@ body {
   }
 }
 
+.landing-active {
+  &::after {
+    height: 100vh !important;
+  }
+}
+
 .landing {
-  height: 600px;
+  height: 100vh;
   width: 100%;
   background-size: cover;
   background-position: center center;
   display: flex;
   justify-content: center;
   align-items: center;
-  @media screen and (max-width: 800px) {
-    height: 400px;
+  position: relative;
+  &--wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 1000;
+    transition-duration: .8s;
   }
   &--title {
+    position: relative;
+    z-index: 100000;
     text-align: center;
     font-weight: bold;
     font-size: 144px;
-    color: #F3F3F3;
+    color: #fff;
     text-transform: uppercase;
     @media screen and (max-width: 950px) {
       font-size: 100px;
@@ -252,49 +314,94 @@ body {
 .nav {
   display: block;
   background-color: #fff;
-  padding-top: 230px;
+  height: 600px;
   cursor: pointer;
-  @media screen and (max-width: 780px) {
-    padding-top: 120px;
+  position: relative;
+  z-index: 10000;
+  &--title {
+    font-weight: bold;
+    font-size: 144px;
+    text-align: center;
+    color: #F3F3F3;
+    width: 100%;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .3s color;
+    z-index: 2;
+    @media screen and (max-width: 950px) {
+      font-size: 100px;
+    }
+    @media screen and (max-width: 750px) {
+      font-size: 80px;
+    }
+    @media screen and (max-width: 550px) {
+      font-size: 60px;
+    }
+    @media screen and (max-width: 400px) {
+      font-size: 40px;
+    }
   }
-  &--item {
+  &--description {
+    position: absolute;
+    width: 100%;
+    height: 260px;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background-color: #F3F3F3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 80px;
     transition: .3s background;
-    @media screen and (max-width: 780px) {
-      padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 950px) {
+      height: 270px;
     }
-    &--title {
-      font-weight: bold;
-      font-size: 144px;
-      text-align: center;
-      color: #F3F3F3;
-      text-transform: uppercase;
-      margin-bottom: 80px;
-      background-color: #fff;
-      width: 100%;
-      line-height: 55%;
-      transition: .3s color;
-      @media screen and (max-width: 900px) {
-        font-size: 15vw;
-      }
-      @media screen and (max-width: 780px) {
-        margin-bottom: 40px;
-      }
+    @media screen and (max-width: 750px) {
+      height: 280px;
     }
-    &--description {
-      max-width: 770px;
-      font-size: 18px;
+    @media screen and (max-width: 550px) {
+      height: 285px;
+    }
+    @media screen and (max-width: 400px) {
+      height: 290px;
+    }
+    &--content {
       color: #000000;
+      font-size: 18px;
       text-align: center;
-      line-height: 27px;
-      margin-left: 20px;
-      margin-right: 20px;
-      font-weight: 300;
       transition: .3s color;
+      line-height: 27px;
+      font-weight: 300;
+      max-width: 720px;
+      margin-left: 30px;
+      padding-right: 30px;
+    }
+  }
+}
+
+.nav-active {
+  height: 100vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition-duration: .8s;
+  transition-property: height;
+
+  .nav--title {
+    color: #fff !important;
+    transition-duration: .3s;
+  }
+  .nav--description {
+    height: 100vh;
+    background-color: #194DD9 !important;
+    transition-duration: .8s;
+    transition-property: height;
+    &--content {
+      opacity: 0;
+      transition-duration: .2s;
     }
   }
 }
